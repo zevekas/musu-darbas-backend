@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class MusuDarbasBackendApplication
 
 fun main(args: Array<String>) {
+    println("test")
     runApplication<MusuDarbasBackendApplication>(*args)
 }
