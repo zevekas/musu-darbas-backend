@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: musu-darbas-postgres-db
+    image: postgres
+    hostname: localhost
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+    volumes:
+      - musu-darbas-postgres-data:/var/lib/postgresql
+    restart: unless-stopped
+
+volumes:
+  musu-darbas-postgres-data:
