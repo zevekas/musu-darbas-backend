@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import repository.UserRepository
+import java.math.BigDecimal
 
 @Service
 class UserService(
@@ -14,7 +15,7 @@ class UserService(
     fun createUser(
         clerkId: String,
         email: String,
-    ): User = userRepository.save(User(clerkId, email))
+    ): User = userRepository.save(User(clerkId, email = email, balance = BigDecimal(0.0)))
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     fun updateEmail(

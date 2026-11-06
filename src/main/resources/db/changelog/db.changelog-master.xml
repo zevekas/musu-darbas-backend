@@ -6,6 +6,46 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="1" author="vytas">
+        <createTable tableName="dorm">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="address" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="vytas">
+        <createTable tableName="room">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="dorm_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_room_dorm"
+                             references="dorm(id)"/>
+            </column>
+            <column name="room_number" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addUniqueConstraint tableName="room" columnNames="dorm_id, room_number"
+                             constraintName="uq_room_dorm_number"/>
+    </changeSet>
+
+    <changeSet id="3" author="vytas">
         <createTable tableName="user">
             <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
@@ -18,6 +58,65 @@
             </column>
             <column name="username" type="VARCHAR(255)">
                 <constraints nullable="true"/>
+            </column>
+            <column name="balance" type="NUMERIC(19,2)" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dorm_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_user_dorm"
+                             references="dorm(id)"/>
+            </column>
+            <column name="room_id" type="UUID">
+                <constraints foreignKeyName="fk_user_room"
+                             references="room(id)"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="vytas">
+        <createTable tableName="product">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="5" author="vytas">
+        <createTable tableName="room_product">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="product_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_room_product_product"
+                             references="product(id)"/>
+            </column>
+            <column name="room_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_room_product_room"
+                             references="room(id)"/>
+            </column>
+            <column name="status" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="INT">
+                <constraints nullable="false"/>
             </column>
             <column name="updated_at" type="TIMESTAMP">
                 <constraints nullable="false"/>

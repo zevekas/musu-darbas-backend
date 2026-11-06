@@ -4,9 +4,12 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
+import java.math.BigDecimal
 import java.time.Instant
 import java.util.UUID
 
@@ -15,10 +18,15 @@ import java.util.UUID
 class User(
     @Column(name = "clerk_id", nullable = false)
     var clerkId: String,
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    var room: Room? = null,
     @Column(name = "email", nullable = false)
     var email: String,
     @Column(name = "username", nullable = true)
     var username: String? = null,
+    @Column(name = "balance", nullable = false)
+    var balance: BigDecimal,
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     var updatedAt: Instant? = null,
