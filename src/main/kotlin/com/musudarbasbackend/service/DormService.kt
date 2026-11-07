@@ -1,8 +1,8 @@
-package com.vairuoklaisvai.musudarbasbackend.service
+package com.musudarbasbackend.service
 
-import com.vairuoklaisvai.musudarbasbackend.model.Dorm
-import com.vairuoklaisvai.musudarbasbackend.model.FetchDormsResponse
-import com.vairuoklaisvai.musudarbasbackend.repository.DormRepository
+import com.musudarbasbackend.model.Dorm
+import com.musudarbasbackend.model.FetchDormsResponse
+import com.musudarbasbackend.repository.DormRepository
 import org.springframework.stereotype.Service
 
 @Service

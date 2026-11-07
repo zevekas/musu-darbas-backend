@@ -1,7 +1,7 @@
-package com.vairuoklaisvai.musudarbasbackend.controller
+package com.musudarbasbackend.controller
 
-import com.vairuoklaisvai.musudarbasbackend.model.FetchDormsResponse
-import com.vairuoklaisvai.musudarbasbackend.service.DormService
+import com.musudarbasbackend.model.FetchDormsResponse
+import com.musudarbasbackend.service.DormService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController

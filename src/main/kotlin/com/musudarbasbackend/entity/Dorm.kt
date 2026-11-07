@@ -1,10 +1,7 @@
-package com.vairuoklaisvai.musudarbasbackend.entity
+package com.musudarbasbackend.entity
 
-import com.vairuoklaisvai.musudarbasbackend.model.ProductType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
 import jakarta.persistence.Table
@@ -14,16 +11,13 @@ import java.time.Instant
 import java.util.UUID
 
 @Entity
-@Table(name = "product")
-class Product(
+@Table(name = "dorm")
+class Dorm(
     @Id
     @GeneratedValue
     var id: UUID? = null,
-    @Column(name = "name", nullable = false)
-    var name: String,
-    @Enumerated(EnumType.STRING)
-    @Column(name = "type", nullable = false)
-    var type: ProductType,
+    @Column(name = "address", nullable = false)
+    var address: String,
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     var updatedAt: Instant? = null,

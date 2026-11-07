@@ -1,4 +1,4 @@
-package com.vairuoklaisvai.musudarbasbackend.model
+package com.musudarbasbackend.model
 
 data class UserResponse(
     val username: String?,

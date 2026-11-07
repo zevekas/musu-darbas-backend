@@ -1,8 +1,8 @@
-package com.vairuoklaisvai.musudarbasbackend.controller
+package com.musudarbasbackend.controller
 
-import com.vairuoklaisvai.musudarbasbackend.model.UserDataRequest
-import com.vairuoklaisvai.musudarbasbackend.model.UserResponse
-import com.vairuoklaisvai.musudarbasbackend.service.UserService
+import com.musudarbasbackend.model.UserDataRequest
+import com.musudarbasbackend.model.UserResponse
+import com.musudarbasbackend.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping

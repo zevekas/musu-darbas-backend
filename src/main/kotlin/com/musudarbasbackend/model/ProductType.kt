@@ -1,4 +1,4 @@
-package com.vairuoklaisvai.musudarbasbackend.model
+package com.musudarbasbackend.model
 
 enum class ProductType {
     QUANTITY,

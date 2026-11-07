@@ -1,4 +1,4 @@
-package com.vairuoklaisvai.musudarbasbackend.config
+package com.musudarbasbackend.config
 
 import com.vairuoklaisvai.backend.exception.AppException
 import com.vairuoklaisvai.backend.exception.BadRequestException

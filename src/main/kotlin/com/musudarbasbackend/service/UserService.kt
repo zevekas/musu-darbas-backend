@@ -1,11 +1,11 @@
-package com.vairuoklaisvai.musudarbasbackend.service
+package com.musudarbasbackend.service
 
-import com.vairuoklaisvai.musudarbasbackend.config.CurrentUser
-import com.vairuoklaisvai.musudarbasbackend.entity.User
-import com.vairuoklaisvai.musudarbasbackend.model.UserDataRequest
-import com.vairuoklaisvai.musudarbasbackend.model.UserResponse
-import com.vairuoklaisvai.musudarbasbackend.repository.DormRepository
-import com.vairuoklaisvai.musudarbasbackend.repository.UserRepository
+import com.musudarbasbackend.config.CurrentUser
+import com.musudarbasbackend.entity.User
+import com.musudarbasbackend.model.UserDataRequest
+import com.musudarbasbackend.model.UserResponse
+import com.musudarbasbackend.repository.DormRepository
+import com.musudarbasbackend.repository.UserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional

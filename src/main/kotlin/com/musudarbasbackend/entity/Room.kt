@@ -1,4 +1,4 @@
-package com.vairuoklaisvai.musudarbasbackend.entity
+package com.musudarbasbackend.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

@@ -1,8 +1,8 @@
-package com.vairuoklaisvai.musudarbasbackend.config
+package com.musudarbasbackend.config
 
-import com.vairuoklaisvai.musudarbasbackend.entity.User
-import com.vairuoklaisvai.musudarbasbackend.repository.UserRepository
-import com.vairuoklaisvai.musudarbasbackend.service.UserService
+import com.musudarbasbackend.entity.User
+import com.musudarbasbackend.repository.UserRepository
+import com.musudarbasbackend.service.UserService
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.stereotype.Component
