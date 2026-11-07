@@ -1,5 +1,6 @@
-package entity
+package com.vairuoklaisvai.musudarbasbackend.entity
 
+import com.vairuoklaisvai.musudarbasbackend.model.ProductType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
@@ -7,7 +8,6 @@ import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import model.ProductType
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
 import java.time.Instant

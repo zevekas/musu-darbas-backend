@@ -1,6 +1,6 @@
-package repository
+package com.vairuoklaisvai.musudarbasbackend.repository
 
-import entity.User
+import com.vairuoklaisvai.musudarbasbackend.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID
 
