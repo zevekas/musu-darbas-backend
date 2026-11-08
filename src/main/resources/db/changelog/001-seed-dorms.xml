@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="seed-dorms" author="vytas">
+        <sql>
+            INSERT INTO dorm (id, address, created_at, updated_at)
+            VALUES (gen_random_uuid(), 'Baltupių bendrabutis', now(), now()),
+                   (gen_random_uuid(), 'M.K. Čiurlionio g. bendrabučių kompleksas', now(), now()),
+                   (gen_random_uuid(), 'Penkiaaukščių bendrabučių kompleksas', now(), now()),
+                   (gen_random_uuid(), 'Šešiolikaaukščių bendrabučių kompleksas', now(), now());
+        </sql>
+        <rollback>
+            DELETE FROM dorm
+            WHERE name IN ('Baltupių bendrabutis',
+            'M.K. Čiurlionio g. bendrabučių kompleksas',
+            'Penkiaaukščių bendrabučių kompleksas',
+            'Šešiolikaaukščių bendrabučių kompleksas');
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

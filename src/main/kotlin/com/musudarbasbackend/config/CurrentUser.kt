@@ -1,12 +1,12 @@
-package config
+package com.musudarbasbackend.config
 
-import entity.User
+import com.musudarbasbackend.entity.User
+import com.musudarbasbackend.repository.UserRepository
+import com.musudarbasbackend.service.UserService
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.stereotype.Component
 import org.springframework.web.context.annotation.RequestScope
-import repository.UserRepository
-import service.UserService
 
 @Component
 @RequestScope

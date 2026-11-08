@@ -1,4 +1,4 @@
-package model
+package com.musudarbasbackend.model
 
 enum class ProductType {
     QUANTITY,

@@ -1,6 +1,6 @@
-package repository
+package com.musudarbasbackend.repository
 
-import entity.User
+import com.musudarbasbackend.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID
 

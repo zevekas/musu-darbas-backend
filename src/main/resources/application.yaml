@@ -15,3 +15,8 @@ spring:
         time_zone: UTC
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.xml
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://caring-fowl-8132.clerk.accounts.dev/.well-known/jwks.json

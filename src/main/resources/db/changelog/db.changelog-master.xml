@@ -22,6 +22,8 @@
         </createTable>
     </changeSet>
 
+    <include file="db/changelog/001-seed-dorms.xml" relativeToChangelogFile="false"/>
+
     <changeSet id="2" author="vytas">
         <createTable tableName="room">
             <column name="id" type="UUID">
@@ -61,10 +63,6 @@
             </column>
             <column name="balance" type="NUMERIC(19,2)" defaultValueNumeric="0">
                 <constraints nullable="false"/>
-            </column>
-            <column name="dorm_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_user_dorm"
-                             references="dorm(id)"/>
             </column>
             <column name="room_id" type="UUID">
                 <constraints foreignKeyName="fk_user_room"
