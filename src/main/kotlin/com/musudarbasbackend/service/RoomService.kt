@@ -1,9 +1,9 @@
 package com.musudarbasbackend.service
 
 import com.musudarbasbackend.entity.Room
+import com.musudarbasbackend.exception.BadRequestException
 import com.musudarbasbackend.repository.DormRepository
 import com.musudarbasbackend.repository.RoomRepository
-import com.vairuoklaisvai.backend.exception.BadRequestException
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

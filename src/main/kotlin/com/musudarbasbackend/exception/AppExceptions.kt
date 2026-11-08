@@ -1,4 +1,4 @@
-package com.vairuoklaisvai.backend.exception
+package com.musudarbasbackend.exception
 
 sealed class AppException(
     override val message: String,

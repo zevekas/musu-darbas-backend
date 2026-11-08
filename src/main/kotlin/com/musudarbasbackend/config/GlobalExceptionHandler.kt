@@ -1,10 +1,10 @@
 package com.musudarbasbackend.config
 
-import com.vairuoklaisvai.backend.exception.AppException
-import com.vairuoklaisvai.backend.exception.BadRequestException
-import com.vairuoklaisvai.backend.exception.ConflictException
-import com.vairuoklaisvai.backend.exception.ForbiddenException
-import com.vairuoklaisvai.backend.exception.NotFoundException
+import com.musudarbasbackend.exception.AppException
+import com.musudarbasbackend.exception.BadRequestException
+import com.musudarbasbackend.exception.ConflictException
+import com.musudarbasbackend.exception.ForbiddenException
+import com.musudarbasbackend.exception.NotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ProblemDetail
 import org.springframework.http.ResponseEntity
