@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.ktlint)
 }
 
-group = "com.vairuoklaisvai"
+group = "com.musudarbasbackend"
 version = "0.0.1-SNAPSHOT"
 description = "backend"
 
