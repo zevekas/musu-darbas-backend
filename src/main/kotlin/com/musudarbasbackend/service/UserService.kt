@@ -46,11 +46,17 @@ class UserService(
     @Transactional
     fun saveUserData(request: UserDataRequest) {
         val user = currentUser.user
+        val oldRoomId = user.room?.id
 
         val roomNumber = request.room.replace(" ", "").lowercase()
         val room = roomService.findOrCreateRoom(request.dorm, roomNumber)
 
         user.username = request.username
         user.room = room
+        userRepository.saveAndFlush(user)
+
+        if (oldRoomId != null && oldRoomId != room.id) {
+            roomService.deleteRoomIfEmpty(oldRoomId)
+        }
     }
 }

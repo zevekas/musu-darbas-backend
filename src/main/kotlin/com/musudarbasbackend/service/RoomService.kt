@@ -3,7 +3,9 @@ package com.musudarbasbackend.service
 import com.musudarbasbackend.entity.Room
 import com.musudarbasbackend.exception.BadRequestException
 import com.musudarbasbackend.repository.DormRepository
+import com.musudarbasbackend.repository.RoomProductRepository
 import com.musudarbasbackend.repository.RoomRepository
+import com.musudarbasbackend.repository.UserRepository
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -14,6 +16,8 @@ import java.util.UUID
 class RoomService(
     private val repository: RoomRepository,
     private val dormRepository: DormRepository,
+    private val userRepository: UserRepository,
+    private val roomProductRepository: RoomProductRepository,
 ) {
     private val logger = KotlinLogging.logger { }
 
@@ -41,5 +45,14 @@ class RoomService(
         }
 
         return room
+    }
+
+    @Transactional
+    fun deleteRoomIfEmpty(roomId: UUID) {
+        if (userRepository.countByRoomId(roomId) > 0) return
+
+        roomProductRepository.deleteAllByRoomId(roomId)
+        repository.deleteById(roomId)
+        logger.info { "Deleted empty room $roomId" }
     }
 }
