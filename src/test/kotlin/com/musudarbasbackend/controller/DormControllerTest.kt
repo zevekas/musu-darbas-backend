@@ -2,7 +2,6 @@ package com.musudarbasbackend.controller
 
 import com.musudarbasbackend.model.Dorm
 import com.musudarbasbackend.model.FetchDormsResponse
-import com.musudarbasbackend.model.UserResponse
 import com.musudarbasbackend.service.DormService
 import io.mockk.clearMocks
 import io.mockk.every
