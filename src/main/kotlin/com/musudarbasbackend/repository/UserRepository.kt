@@ -6,4 +6,6 @@ import java.util.UUID
 
 interface UserRepository : JpaRepository<User, UUID> {
     fun findByClerkId(clerkId: String): User?
+
+    fun countByRoomId(roomId: UUID): Long
 }
