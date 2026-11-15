@@ -24,6 +24,8 @@ class Product(
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
     var type: ProductType,
+    @Column(name = "image_url", nullable = true)
+    var imageUrl: String? = null,
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     var updatedAt: Instant? = null,
