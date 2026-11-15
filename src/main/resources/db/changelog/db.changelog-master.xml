@@ -124,5 +124,11 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="6" author="kipras">
+    <addColumn tableName="product">
+        <column name="image_url" type="VARCHAR(500)"/>
+    </addColumn>
+</changeSet>
+
 
 </databaseChangeLog>
