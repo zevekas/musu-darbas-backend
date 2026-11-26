@@ -1,7 +1,6 @@
 package com.musudarbasbackend.controller
 
 import com.musudarbasbackend.model.CreateProductRequest
-import com.musudarbasbackend.model.ProductResponse
 import com.musudarbasbackend.service.ProductService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
@@ -19,5 +18,7 @@ class ProductController(
     @ResponseStatus(HttpStatus.CREATED)
     fun createProduct(
         @RequestBody request: CreateProductRequest,
-    ): ProductResponse = service.createProduct(request)
+    ) {
+        service.createProduct(request)
+    }
 }

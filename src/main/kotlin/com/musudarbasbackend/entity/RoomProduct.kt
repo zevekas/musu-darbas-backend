@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
+import java.math.BigDecimal
 import java.time.Instant
 import java.util.UUID
 
@@ -28,10 +29,12 @@ class RoomProduct(
     @JoinColumn(name = "room_id")
     var room: Room,
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    var status: ProductStatus,
-    @Column(name = "amount", nullable = false)
-    var amount: Int,
+    @Column(name = "status", nullable = true)
+    var status: ProductStatus? = null,
+    @Column(name = "amount", nullable = true)
+    var amount: Int? = null,
+    @Column(name = "price", nullable = false)
+    var price: BigDecimal,
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     var updatedAt: Instant? = null,

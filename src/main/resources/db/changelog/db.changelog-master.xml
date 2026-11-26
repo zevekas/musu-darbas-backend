@@ -124,11 +124,24 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet id="6" author="kipras">
-    <addColumn tableName="product">
-        <column name="image_url" type="VARCHAR(500)"/>
-    </addColumn>
-</changeSet>
 
+    <changeSet id="6" author="kipras">
+        <addColumn tableName="product">
+            <column name="image_url" type="VARCHAR(500)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="7" author="kipras">
+        <dropNotNullConstraint tableName="room_product" columnName="status" columnDataType="VARCHAR(50)"/>
+        <dropNotNullConstraint tableName="room_product" columnName="amount" columnDataType="INT"/>
+    </changeSet>
+
+    <changeSet id="8" author="kipras">
+        <addColumn tableName="room_product">
+            <column name="price" type="NUMERIC(19,2)" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 
 </databaseChangeLog>
